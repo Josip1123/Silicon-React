@@ -1,0 +1,1243 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "utility_classes";
+@import "slider";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+
+
+body {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: $regular;
+    font-style: normal;
+
+    main {
+        min-height: 100vh;
+    }
+}
+
+a:focus-visible,
+button:focus-visible {
+    @include outline-focus;
+
+    &:active {
+        outline: none;
+    }
+}
+
+input:focus-visible,
+.submit-btn:focus-visible {
+    outline: 2px solid $main-color;
+    outline-offset: -2px;
+}
+
+.submit-btn:focus-visible {
+    outline-color: black;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+p {
+    color: $text-color-gray;
+}
+
+// Header section start
+
+.header-container {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    position: relative;
+    margin: $center-object;
+    @include container-sizes;
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1rem;
+
+        .logo-img {
+            height: 3rem;
+            width: 3rem;
+        }
+
+        @media (min-width: $big-screen) {
+            height: 4.5rem;
+            justify-content: center;
+            gap: 1.5rem;
+
+            .logo-img {
+                height: 4.5rem;
+                width: 4.5rem;
+            }
+        }
+    }
+
+    .main-navigation {
+        display: none;
+        a {
+            margin-inline: 1rem;
+        }
+    }
+
+    .signin {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: black;
+
+        span {
+            font-size: 2.5rem;
+        }
+    }
+
+
+
+    @media (min-width: $ipad-mini) {
+        gap: 3rem;
+        padding: 1rem 1rem;
+
+    }
+
+    @media (min-width: $big-screen) {
+        grid-template-columns: auto 1fr auto auto;
+
+        padding: 1rem 1rem;
+
+        .main-navigation {
+            display: block;
+        }
+
+        .signin {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+    }
+}
+
+
+// Header end
+
+// Hero section start
+
+.hero-wrapper-bg {
+    background: rgb(99, 102, 241);
+    background: linear-gradient(0deg, rgba(99, 102, 241, 0.1) 0%, rgba(218, 70, 239, 0.05) 42%, rgba(241, 244, 253, 0.07) 83%);
+
+    .hero-container {
+
+        margin: $center-object;
+        text-align: center;
+
+        position: relative;
+        padding: 1rem;
+        @include container-sizes;
+
+        @media (min-width: $ipad-mini) {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto 1fr;
+
+
+        }
+
+        @media (min-width: $big-screen) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr;
+
+        }
+
+
+        .hero-heading {
+            font-size: $h1-fontsize;
+            font-weight: $extra-bold;
+            text-shadow: $shadow-main;
+            padding-bottom: 2rem;
+
+            @media (min-width: $ipad-mini) {
+                grid-column: 1/3;
+                font-size: $display-4;
+                padding-bottom: 0;
+            }
+
+            @media (min-width: $medium-screen) {
+                padding-bottom: 3rem;
+            }
+
+            @media (min-width: $big-screen) {
+                grid-column: 1/1;
+                grid-row: 1/2;
+                font-size: $display-5;
+                padding: 5rem 0 1rem 0;
+                text-align: start;
+            }
+        }
+
+        .hero-content {
+            @include flex-column-center;
+            gap: 2rem;
+
+            @media (min-width: $ipad-mini) {
+                padding: 5rem 0 2rem 0;
+                align-items: start;
+                gap: 4rem;
+
+            }
+
+            @media (min-width: $big-screen) {
+                align-items: start;
+                grid-column: 1/1;
+                grid-row: 2/3;
+                padding: 0rem 5rem 2rem 0;
+            }
+
+            .hero-text {
+                max-width: 34ch;
+                font-size: $L-text;
+
+                @media (min-width: $ipad-mini) {
+                    max-width: 25ch;
+                    text-align: start;
+
+                }
+
+                @media (min-width: $medium-screen) {
+                    max-width: 35ch;
+                }
+
+                @media (min-width: $big-screen) {
+                    max-width: 50ch;
+                }
+            }
+
+            .app-store-container {
+                @include flex-column-center;
+                gap: 1rem;
+                width: calc(100% - 4rem);
+
+
+                @media (min-width: $ipad-mini) {
+                    gap: 0.5rem;
+                    align-items: flex-start;
+                    width: 90%;
+
+                }
+
+                @media (min-width: $medium-screen) {
+
+                    flex-direction: row;
+                    width: 100%;
+
+                }
+
+
+
+                @media (min-width: $big-screen) {
+                    padding: 0;
+                }
+
+                .google-play,
+                .app-store {
+                    width: 100%;
+                    position: relative;
+                    display: block;
+                    padding: 2rem;
+                    background-color: black;
+                    border-radius: $border-radius;
+
+
+
+
+                    @media (min-width: $ipad-mini) {
+                        width: 80%;
+                    }
+
+                    @media (min-width: $medium-screen) {
+                        padding: 2rem 6rem;
+                    }
+                }
+
+
+                .app-store {
+
+                    &::before {
+                        content: url("../img/apple-store.svg");
+                        position: absolute;
+                        @include center-absolut;
+                        padding-top: .5rem;
+                    }
+                }
+
+                .google-play {
+                    &::before {
+                        content: url("../img/google-play.svg");
+                        position: absolute;
+                        @include center-absolut;
+                        padding-top: .5rem;
+                    }
+                }
+            }
+
+            .discover-more {
+                display: flex;
+                padding-bottom: 2rem;
+                align-items: center;
+                gap: 1rem;
+                font-size: $S-text;
+                color: $text-color-gray;
+
+                .down-arrow {
+                    background-color: white;
+                }
+
+
+                @media (min-width: $big-screen) {
+                    grid-column: 2/3;
+                    grid-row: 1/3;
+                    justify-self: flex-end;
+                    margin-top: 6rem;
+                }
+            }
+
+            .hero-text,
+            .discover-more {
+                font-weight: $regular;
+            }
+        }
+
+        aside {
+            display: none;
+
+            @media (min-width: $ipad-mini) {
+
+                display: block;
+                position: absolute;
+                bottom: 0;
+                right: 1rem;
+            }
+        }
+
+    }
+
+}
+
+
+// hero end
+
+
+// brands section start
+
+.brands-container {
+    display: none;
+
+    @media (min-width: $ipad-mini) {
+        margin: $center-object;
+        max-width: $max-width-medium;
+        display: flex;
+        justify-content: space-between;
+        padding: 4rem 1rem;
+        gap: 1rem;
+
+        .brand-logo {
+            border: 2px solid $border-gray;
+            border-radius: $border-radius;
+            padding: 1.5rem;
+
+            img {
+                height: 50px;
+                width: 150px;
+            }
+        }
+
+        .brand-logo:nth-last-child(-n + 2) {
+            display: none;
+        }
+    }
+
+    @media (min-width: $big-screen) {
+
+        @include container-sizes;
+
+        .brand-logo:nth-last-child(-n + 2) {
+            display: block;
+        }
+    }
+
+
+}
+
+// brands end
+
+
+//App features start
+
+.app-features-container {
+    max-width: $max-width-small;
+    margin: $center-object;
+    padding: 2rem 1rem;
+    margin-bottom: 4rem;
+    @include container-sizes;
+
+    @media (min-width: $ipad-mini) {
+        display: grid;
+        justify-content: center;
+
+
+
+
+        .features-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            
+            @media (min-width: $medium-screen) {
+                column-gap: 9rem;
+            }
+
+            @media (min-width: $big-screen) {
+                column-gap: 1rem;
+            }
+
+        }
+    }
+
+
+    @media (min-width: $big-screen) {
+        justify-content: end;
+        position: relative;
+    }
+
+    .app-features-heading,
+    .app-features-heading-text {
+        text-align: center;
+        max-width: 45ch;
+        padding-bottom: 2rem;
+        justify-self: center;
+
+        @media (min-width: $ipad-mini) {
+            max-width: 100%;
+        }
+
+        @media (min-width: $big-screen) {
+            text-align: left;
+            max-width: 70ch;
+        }
+
+    }
+
+    .app-features-heading {
+        font-size: $h2-fontsize;
+
+        @media (min-width: $big-screen) {
+            justify-self: flex-start;
+            font-size: $display-6;
+        }
+    }
+
+    .app-features-heading-text {
+        font-size: $L-text;
+    }
+
+
+    .feature-card {
+        display: flex;
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+
+    .feature-description {
+        font-size: $M-text;
+        max-width: 40ch;
+
+        @media (min-width: $ipad-mini) {
+            max-width: 30ch;
+
+        }
+    }
+
+    .feature-name {
+        margin-bottom: .5rem;
+    }
+
+    .feature-icon {
+        padding: 1.8rem;
+        background-color: #F3F6FF;
+        display: flex;
+        align-self: first baseline;
+        justify-content: center;
+        border-radius: $border-radius;
+        position: relative;
+    }
+
+    .feature-icon::before {
+        content: "";
+        position: absolute;
+        @include center-absolut;
+        height: 2rem;
+        width: 2rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .icon-1::before {
+        background-image: url("../img/gradient-icon-1.svg");
+    }
+
+    .icon-2::before {
+        background-image: url("../img/gradient-icon-2.svg");
+
+    }
+
+    .icon-3::before {
+        background-image: url("../img/gradient-icon-3.svg");
+
+    }
+
+    .icon-4::before {
+        background-image: url("../img/gradient-icon-4.svg");
+
+    }
+
+    .icon-5::before {
+        background-image: url("./img/gradient-icon-5.svg");
+
+    }
+
+    .icon-6::before {
+        background-image: url("../img/gradient-icon-6.svg");
+    }
+
+
+    aside {
+        display: none;
+
+        @media (min-width: $big-screen) {
+            display: block;
+            position: absolute;
+            left: 2rem;
+            bottom: 0;
+        }
+    }
+}
+
+
+// app features end
+
+//app showcase start
+
+.app-showcase-wrapper {
+    width: 100%;
+    background-color: $background-secondary;
+
+    .app-showcase-container {
+        @include flex-column-center;
+        margin: $center-object;
+        @include container-sizes;
+        gap: 2rem;
+        padding: 2rem 0;
+
+        .showcase-heading {
+            font-size: $h2-fontsize;
+
+            @media (min-width: $big-screen) {
+                font-size: $display-6;
+            }
+        }
+
+        .showcase-images-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+
+            @media (min-width: $big-screen) {
+                gap: 4rem;
+            }
+
+            .showcase-img:nth-child(odd) {
+                display: none;
+
+                @media (min-width: $ipad-mini) {
+                    display: block;
+                }
+            }
+        }
+
+        .showcase-text {
+            max-width: 40ch;
+            text-align: center;
+            font-size: $M-text;
+
+
+            @media (min-width: $ipad-mini) {
+                max-width: 50ch;
+            }
+        }
+
+        h3 {
+            max-width: 20ch;
+            text-align: center;
+            font-size: $h3-fontsize;
+
+            @media (min-width: $ipad-mini) {
+                max-width: fit-content;
+            }
+        }
+    }
+
+}
+
+// app showcase end
+
+
+
+// Payments start
+// only on desktop
+
+
+.payments {
+
+    display: none;
+    @include container-sizes;
+    margin: $center-object;
+    // width: calc(100% - 2rem);
+    padding: 4rem 1rem;
+
+    @media (min-width: $big-screen) {
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+
+    }
+
+    .payment-img-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .make-payments,
+    .receive-payments {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        h2 {
+            font-size: $h2-fontsize;
+            max-width: 20ch;
+
+        }
+
+        .learn-more-payments {
+            width: 6.5rem;
+            text-align: center;
+        }
+    }
+
+    .receive-payments {
+        .international-features {
+            display: flex;
+            .feature {
+                display: flex;
+                flex-direction: column;
+                flex: 0 0 50%;
+                gap: 1rem;
+                p{
+                    max-width: 30ch;
+                }
+                &:first-child{
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+
+    .transfer-perks-list {
+
+        list-style-position: inside;
+        line-height: 2rem;
+        padding-left: 0;
+        list-style-image: url(../img/bx-check-circle.svg);
+
+
+    }
+
+
+    .payment-icon-1,
+    .payment-icon-2 {
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        height: 3.5rem;
+        width: 3.5rem;
+        background-color: #F3F6FF;
+        border-radius: $border-radius;
+    }
+
+    .payment-icon-1 {
+        background-image: url(../img/gradient-icon-1.svg);
+    }
+
+    .payment-icon-2 {
+        background-image: url(../img/gradient-icon-5.svg);
+    }
+
+}
+
+//payment end
+
+//testemonial start
+
+.testemonial-wrapper {
+    display: none;
+    background-color: $background-secondary;
+    padding: 2rem 0;
+
+    @media (min-width: $big-screen) {
+        display: block;
+    }
+}
+
+.client-testemonial {
+    display: none;
+
+    @media (min-width: $big-screen) {
+        display: flex;
+        gap: 2rem;
+        @include container-sizes;
+        padding-inline: 1rem;
+        margin: 5rem auto;
+
+        h2 {
+            max-width: 15ch;
+            font-size: $h2-fontsize;
+
+            @media (min-width: $big-screen) {
+                font-size: $display-6;
+            }
+        }
+
+        .client-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 1rem;
+            padding: 2rem;
+            border: 1px solid $border-gray;
+            border-radius: $border-radius;
+            background-color: white;
+            box-shadow: $shadow-main;
+
+            .review {
+                max-width: 40ch;
+                font-size: $L-text;
+            }
+
+            .user-name {
+                font-size: $M-text;
+                font-weight: $bold;
+                color: black;
+            }
+
+            .title {
+                font-size: $S-text;
+            }
+
+            .user-profile {
+                display: flex;
+                gap: 0.5rem;
+            }
+        }
+
+        .quotes-icon {
+            position: absolute;
+            top: -2rem;
+        }
+    }
+}
+
+//testemonial end
+
+//FAQ start
+.faq-container {
+    @include container-sizes;
+    @include flex-column-center;
+    margin: 2rem auto 0 auto;
+    width: calc(100% - 2rem);
+
+    @media (min-width: $big-screen) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, auto);
+        gap: 2rem 4rem;
+        align-items: start;
+        padding-top: 3rem;
+    }
+
+
+
+    .faq-heading-container {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $big-screen) {
+            grid-column: 1/2;
+            text-align: start;
+        }
+
+        .faq-heading {
+            font-size: $h2-fontsize;
+            padding: 2rem 1rem;
+
+            @media (min-width: $big-screen) {
+                font-size: $display-6;
+                padding: 0 0 2rem 0;
+                max-width: 15ch;
+            }
+        }
+
+        .faq-text {
+            font-size: $L-text;
+            margin: $center-object;
+            max-width: 25ch;
+            padding-bottom: 2rem;
+
+            @media (min-width: $big-screen) {
+                margin: 0;
+            }
+        }
+    }
+
+    .faq-cards-container {
+        width: 100%;
+
+        @media (min-width: $big-screen) {
+            grid-column: 2/3;
+            grid-row: 1/-1;
+        }
+    }
+
+    .faq-card {
+        width: 100%;
+
+
+        @media (min-width: $ipad-mini) {
+            margin-bottom: 2rem;
+            border: 1px solid $border-gray;
+            border-radius: $border-radius;
+            box-shadow: $shadow-main;
+        }
+    }
+
+    .q-and-btn-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+
+        @media (min-width: $ipad-mini) {
+            justify-content: space-between;
+        }
+    }
+
+    .q-and-btn-container,
+    .answer {
+        border: 1px solid $border-gray;
+        padding: 1rem 2rem;
+
+        @media (min-width: $ipad-mini) {
+            border: none;
+        }
+    }
+
+
+    .question {
+        font-size: $M-text;
+        font-weight: $medium;
+        color: black;
+
+    }
+
+    .answer {
+        font-size: $S-text;
+        display: none;
+        transition: all 200ms;
+
+
+        @media (min-width: $ipad-mini) {
+
+
+            padding-right: 6rem;
+            padding-bottom: 2rem;
+        }
+
+    }
+
+    //FAQ end
+
+    // shows only on tablet and desktop
+    // contact start
+
+
+    .contact-medium-and-large {
+        display: none;
+        width: 100%;
+        margin-bottom: 2rem;
+
+        @media (min-width: $big-screen) {
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+
+
+        @media (min-width: $ipad-mini) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+
+            .contact-phone,
+            .contact-chat {
+                border: 1px solid $border-gray;
+                border-radius: $border-radius;
+                padding: 2rem;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                align-items: flex-start;
+                font-size: $XL-text;
+
+                .material-symbols-outlined {
+                    font-size: 2.5rem;
+                    font-weight: $bold;
+                }
+            }
+
+            .contact-phone {
+                color: $main-color;
+            }
+
+            .contact-chat {
+                color: green;
+            }
+
+            .contact-us-via-phone::after {
+                content: '\2192';
+                padding-left: .5rem;
+                font-weight: $bold;
+                font-size: 1.2rem;
+
+            }
+
+            .contact-us-via-chat::after {
+                content: '\2192';
+                padding-left: .5rem;
+                font-weight: $bold;
+                font-size: 1.2rem;
+
+            }
+
+        }
+    }
+}
+
+.contact-btn-wrapper {
+    @include container-sizes;
+    margin: $center-object;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+
+    @media (min-width: $ipad-mini) {
+        display: none;
+    }
+
+    .contact-btn {
+        margin: 2rem;
+        padding: 1rem 3rem;
+        font-size: $M-text;
+        font-weight: $bold;
+    }
+}
+
+
+//contact end
+
+
+
+//sub form start
+
+.contact-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .form-container {
+        background-color: $background-secondary;
+        border-radius: $border-radius;
+        @include container-sizes;
+        padding: 3rem 2rem;
+        margin-inline: -11rem;
+        width: calc(100% - 2rem);
+
+
+        @media (min-width: $ipad-mini) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        @media (min-width: $big-screen) {
+            justify-content: space-around;
+        }
+
+        .form-heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+
+            @media (min-width: $ipad-mini) {
+                margin-bottom: 0;
+                gap: 2rem;
+            }
+
+
+            h2 {
+                text-align: center;
+                max-width: 20ch;
+                font-size: $lead-text;
+                font-weight: $bold;
+
+                @media (min-width: $ipad-mini) {
+                    text-align: start;
+                }
+            }
+        }
+
+        form {
+            .form-content {
+                display: flex;
+                justify-content: center;
+
+
+                .email-input {
+                    position: relative;
+
+                    input {
+                        display: block;
+                        height: 100%;
+                        border-radius: 0.5rem 0 0 0.5rem;
+                        padding-left: 1rem;
+                        text-align: center;
+                        border: none;
+                        width: 100%;
+                        font-size: $M-text;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 0.3rem;
+                        height: 2rem;
+                        width: 2rem;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-image: url("../img/mail-icon.svg");
+                    }
+                }
+            }
+
+
+            .submit-btn {
+                border-radius: 0 0.5rem 0.5rem 0;
+                font-size: $M-text;
+                font-weight: $bold;
+                padding: 1rem;
+            }
+        }
+    }
+}
+
+//sub form end
+
+
+//Footer start
+
+footer {
+    width: 100%;
+
+    .footer-container {
+        @include container-sizes;
+        margin: $center-object;
+        @include flex-column-center;
+        gap: 0.5rem;
+        padding: 1.5rem 0;
+        font-size: $S-text;
+        color: $font-color;
+
+        @media (min-width: $medium-screen) {
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+}
+
+
+//footer end
+
+
+
+// darkmode
+
+.dark-mode {
+    background-color: black;
+
+    h1,
+    h2,
+    h3,
+    li {
+        color: white !important;
+    }
+
+    p,
+    span {
+        color: $darkmode-text-white !important;
+    }
+
+    .main-navigation {
+        color: white;
+    }
+
+    .hero-container {
+        .hero-content {
+            .app-store-container {
+
+                .app-store,
+                .google-play {
+                    background-color: $main-color;
+                }
+            }
+
+            .discover-more {
+                color: white;
+
+                .down-arrow {
+                    background-color: $darkmode-buttons;
+                }
+            }
+        }
+    }
+
+    .down-arrow {
+        background-color: $darkmode-buttons;
+    }
+
+    .feature-icon {
+        background-color: $darkmode-buttons;
+    }
+
+    .payment-icon-1,
+    .payment-icon-2 {
+        background-color: $darkmode-buttons;
+    }
+
+    .app-showcase-wrapper {
+        background-color: $background-secondary-dark;
+    }
+
+    .testemonial-wrapper {
+        background-color: $background-secondary-dark;
+
+    }
+
+    .client-card {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .faq-card {
+
+        background-color: $background-secondary-dark;
+
+        @media (min-width: $ipad-mini) {
+            border: none;
+        }
+    }
+
+    .question {
+        font-weight: $bold;
+    }
+
+    .phone-icon {
+        color: $main-color !important;
+    }
+
+    .chat-icon {
+        color: green !important;
+    }
+
+    .contact-phone,
+    .contact-chat {
+        background-color: $background-secondary-dark;
+    }
+
+    .form-container {
+        background-color: $background-secondary-dark;
+
+        .submit-btn:focus-visible {
+            outline-color: orange;
+        }
+    }
+}
+
+//darkmode end
+
+//animation
+
+.animate-and-show-answer {
+
+
+    .answer {
+        display: block;
+    }
+
+    .animated-btn {
+        transform: rotate(180deg);
+        transition: all 500ms;
+        background-color: $main-color;
+        color: white;
+    }
+}
+
+//animatio end

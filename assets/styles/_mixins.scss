@@ -1,0 +1,35 @@
+@mixin center-absolut {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin container-sizes {
+    max-width: $max-width-small;
+
+    @media (min-width: $ipad-mini) {
+        max-width: $ipad-mini;
+    }
+
+    @media (min-width: $medium-screen) {
+        max-width: $max-width-medium;
+    }
+
+    @media (min-width: $big-screen) {
+        max-width: $max-width-big;
+    }
+}
+
+@mixin outline-focus {
+        outline: 2px solid $main-color;
+        outline-offset: 0.4rem;
+        border-radius: $border-radius;
+}

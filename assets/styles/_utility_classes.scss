@@ -1,0 +1,29 @@
+// buttons
+.main-btn {
+    padding: 0.5rem 3rem;
+    border-radius: 0.5rem;
+    background-color: $main-color;
+    color: white;
+}
+
+
+// google icons material
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL'1,
+        'wght'600,
+        'GRAD',
+        'opsz'24;
+}
+
+.down-arrow {
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: #F3F6FF;
+
+    &::before {
+        content: "keyboard_arrow_down";
+    }
+}
