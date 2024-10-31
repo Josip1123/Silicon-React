@@ -7,9 +7,9 @@ function Header() {
 
         <header>
             <div className="header-container">
-                <NavigationAndLogo/>
-                <DarkmodeToggle/>
-                <MenuBtn/>
+                <NavigationAndLogo />
+                <DarkmodeToggle />
+                <MenuBtn />
             </div>
         </header>
     )

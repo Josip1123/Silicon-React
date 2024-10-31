@@ -1,21 +1,25 @@
 //import { useState } from 'react'
-import Footer from './components/Footer/Footer'
-import Header from './components/Header/Header'
-import Hero from './components/Hero/Hero'
-import Brands from './components/Brands/Brands'
-
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Footer from './components/Footer'
+import Header from "./components/Header"
+import Home from "./Pages/Home"
+import Contact from "./Pages/Contact"
 
 function App() {
 
   return (
-    <>
+
+    <BrowserRouter>
       <Header />
       <main>
-        <Hero/>
-        <Brands/>
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+
       </main>
-      <Footer/>
-    </>
+      <Footer />
+    </BrowserRouter>
   )
 }
 

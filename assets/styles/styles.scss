@@ -19,6 +19,12 @@ body {
     }
 }
 
+.active {
+    outline: 2px solid $main-color;
+    outline-offset: 0.5rem;
+    border-radius: $border-radius;
+}
+
 a:focus-visible,
 button:focus-visible {
     @include outline-focus;

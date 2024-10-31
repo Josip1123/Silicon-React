@@ -8,7 +8,7 @@ import Brand6 from "/assets/img/06-brands.svg"
 
 function Brands() {
     return (
-        <section className="brands-container">
+        <section id="brands" className="brands-container">
                 <div className="brand-logo">
                     <img src={Brand1} />
                 </div>

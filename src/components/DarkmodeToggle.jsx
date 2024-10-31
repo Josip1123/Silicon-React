@@ -34,7 +34,7 @@ function DarkmodeToggle() {
 
   return (
     <label className="switch">
-      <span className="darkmode-text">{isDarkMode ? `Light mode` : `Dark mode`}</span>
+      <span className="darkmode-text">{ isDarkMode ? `Light mode` : `Dark mode` }</span>
       <input
         className="darkmode-toggle"
         type="checkbox"
