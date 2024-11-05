@@ -1,12 +1,13 @@
 import { Link, NavLink } from "react-router-dom"
 import Logo from "/assets/img/Logo.svg"
-import { NavHashLink } from "react-router-hash-link"
+import { HashLink } from "react-router-hash-link"
 
 function NavigationAndLogo() {
+
     return (
         <>
             <div className="logo-container">
-                <Link to="/home" aria-label="Link to home page"
+                <Link to="/" aria-label="Link to home page"
                 ><img
                         src={Logo}
                         alt="Silicon Brand Logo"
@@ -14,7 +15,7 @@ function NavigationAndLogo() {
                     />
                 </Link>
                 <Link
-                    to="/home"
+                    to="/"
                     className="logo-text"
                     aria-label="Link to home page"
                 >
@@ -22,9 +23,9 @@ function NavigationAndLogo() {
                 </Link>
             </div>
             <nav className="main-navigation">
-                <NavHashLink activeClassName="selected" smooth to="/home/#brands" aria-label="Application features">
+                <HashLink smooth to="/#brands" aria-label="Application features">
                     Features
-                </NavHashLink>
+                </HashLink>
 
 
                 <NavLink to="/contact" aria-label="Application features"

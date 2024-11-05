@@ -707,7 +707,7 @@ p {
   background-image: url("../img/gradient-icon-4.svg");
 }
 .app-features-container .icon-5::before {
-  background-image: url("./img/gradient-icon-5.svg");
+  background-image: url("../img/gradient-icon-5.svg");
 }
 .app-features-container .icon-6::before {
   background-image: url("../img/gradient-icon-6.svg");
@@ -1064,6 +1064,7 @@ p {
 .faq-container .q-and-btn-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   cursor: pointer;
 }

@@ -524,7 +524,7 @@ p {
     }
 
     .icon-5::before {
-        background-image: url("./img/gradient-icon-5.svg");
+        background-image: url("../img/gradient-icon-5.svg");
 
     }
 
@@ -863,6 +863,7 @@ p {
     .q-and-btn-container {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 1rem;
         cursor: pointer;
 
