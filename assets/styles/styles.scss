@@ -670,7 +670,7 @@ p {
                 flex: 0 0 50%;
                 gap: 1rem;
                 p{
-                    max-width: 30ch;
+                    max-width: 25ch;
                 }
                 &:first-child{
                     margin-right: 1rem;
@@ -776,6 +776,10 @@ p {
                 display: flex;
                 gap: 0.5rem;
             }
+
+            .stars {
+                color: gold!important;
+            }
         }
 
         .quotes-icon {
@@ -791,7 +795,7 @@ p {
 .faq-container {
     @include container-sizes;
     @include flex-column-center;
-    margin: 2rem auto 0 auto;
+    margin: 2rem auto 2rem auto;
     width: calc(100% - 2rem);
 
     @media (min-width: $big-screen) {
@@ -801,7 +805,13 @@ p {
         gap: 2rem 4rem;
         align-items: start;
         padding-top: 3rem;
+        margin-bottom: 0;
     }
+
+    @media (min-width: $ipad-mini) {
+        margin-bottom: 0;
+    }
+
 
 
 

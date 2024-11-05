@@ -1,4 +1,5 @@
 import FeatureCard from "./FeatureCard"
+import FeaturesImage from "/assets/img/app-features-img.webp"
 
 function AppFeatures() {
     return (
@@ -20,9 +21,10 @@ function AppFeatures() {
             </div>
             <aside className="app-features-img">
                 <img
-                    src="./styles/img/app-features-img.webp"
+                    src={FeaturesImage}
                     loading="lazy"
                     alt="Image of app features"
+                    height={600}
                 />
             </aside>
         </section>
