@@ -1,20 +1,25 @@
 import ContactMain from "./ContactMain"
 import { useState, useEffect } from "react"
 import FaqCard from "./FaqCard"
+import Loader from "./Loader"
 
 
 function Faq() {
     const url = "https://win24-assignment.azurewebsites.net/api/faq"
     const [faqs, setFaqs] = useState([])
+    const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
         async function fetchData() {
+            setIsLoaded(true)
             const res = await fetch(url);
             const faqs = await res.json();
             setFaqs(faqs);
+            setIsLoaded(false)
         }
 
         fetchData();
+
     }, [])
 
     return (
@@ -31,7 +36,7 @@ function Faq() {
             </div>
 
             <div className="faq-cards-container">
-                {faqs.map((item) => {
+                {isLoaded ? <Loader /> : faqs.map((item) => {
                     return <FaqCard key={item.id} question={item.title} answer={item.content} />
                 })}
             </div>
