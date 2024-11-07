@@ -940,6 +940,9 @@ p {
   }
 }
 @media (min-width: 1200px) {
+  .client-testemonial span .gold-star {
+    color: gold !important;
+  }
   .client-testemonial .client-card {
     position: relative;
     display: flex;
@@ -967,9 +970,6 @@ p {
   .client-testemonial .client-card .user-profile {
     display: flex;
     gap: 0.5rem;
-  }
-  .client-testemonial .client-card .stars {
-    color: gold !important;
   }
   .client-testemonial .quotes-icon {
     position: absolute;
@@ -1415,4 +1415,26 @@ footer .footer-container {
   transition: all 500ms;
   background-color: #5e60f5;
   color: white;
+}
+
+.breadcrumbs {
+  max-width: 450px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .breadcrumbs {
+    max-width: 768px;
+  }
+}
+@media (min-width: 900px) {
+  .breadcrumbs {
+    max-width: 900px;
+  }
+}
+@media (min-width: 1200px) {
+  .breadcrumbs {
+    max-width: 1320px;
+  }
 }/*# sourceMappingURL=styles.css.map */

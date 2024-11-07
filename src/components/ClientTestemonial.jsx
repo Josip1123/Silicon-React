@@ -2,12 +2,14 @@ import Quotes from "/assets/img/quotes.svg"
 
 function ClientTestemonial(props) {
 
-    let numberOfStars = "";
+    let numberOfStars = [];
     function createStarsRating(stars) {
         for (let i = 0; i < stars; i++) {
-            numberOfStars += "star_rate" + " "
+            numberOfStars.push(<span className="gold-star" key={i}>star_rate</span>);
         }
-        return numberOfStars
+            for (let j = stars; j < 5; j++) {
+                numberOfStars.push(<span key={j}>star_rate</span>);
+            }
     }
 
     createStarsRating(props.starRating)
