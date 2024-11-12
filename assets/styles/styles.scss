@@ -26,7 +26,8 @@ body {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+textarea:focus-visible{
     @include outline-focus;
 
     &:active {
@@ -137,6 +138,31 @@ p {
         .mobile-menu {
             display: none;
         }
+    }
+
+    .menu-collapsed{
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .7rem;
+        font-size: 2rem;
+        font-weight: $bold;
+        justify-content: space-evenly;
+        grid-column: 1 / -1;
+        justify-self: center;
+        padding: 0;
+        height: 0px;
+        overflow: hidden;
+        pointer-events: none;
+        transition: height 250ms ease;
+    }
+
+    .menu-shown{
+        height: 250px;
+        border-bottom: 5px solid $main-color;
+        pointer-events: all;
     }
 }
 

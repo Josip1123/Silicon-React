@@ -210,13 +210,15 @@ body main {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+textarea:focus-visible {
   outline: 2px solid #5e60f5;
-  outline-offset: 0.4rem;
+  outline-offset: 0.2rem;
   border-radius: 1rem;
 }
 a:focus-visible:active,
-button:focus-visible:active {
+button:focus-visible:active,
+textarea:focus-visible:active {
   outline: none;
 }
 
@@ -325,6 +327,29 @@ p {
   .header-container .mobile-menu {
     display: none;
   }
+}
+.header-container .menu-collapsed {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 2rem;
+  font-weight: 700;
+  justify-content: space-evenly;
+  grid-column: 1/-1;
+  justify-self: center;
+  padding: 0;
+  height: 0px;
+  overflow: hidden;
+  pointer-events: none;
+  transition: height 250ms ease;
+}
+.header-container .menu-shown {
+  height: 250px;
+  border-bottom: 5px solid #5e60f5;
+  pointer-events: all;
 }
 
 .hero-wrapper-bg {

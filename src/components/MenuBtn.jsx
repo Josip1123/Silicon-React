@@ -1,6 +1,6 @@
 
+function MenuBtn({ onClick }) {
 
-function MenuBtn() {
     return (
         <>
             <a href="#" className="signin main-btn">
@@ -8,7 +8,7 @@ function MenuBtn() {
                 in/up
             </a>
 
-            <a className="mobile-menu" aria-label="mobile menu" href="#">
+            <a className="mobile-menu" onClick={onClick} aria-label="mobile menu">
                 <span className="material-symbols-outlined"> Menu </span>
             </a>
         
