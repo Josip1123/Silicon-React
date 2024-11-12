@@ -1,8 +1,8 @@
 import BasicBreadcrumbs from "../components/BasicBreadcrumbs"
-import MainContactForm from "../components/MainContactForm"
+import ContactWrapper from "../components/ContactWrapper"
 import MapsIframe from "../components/MapsIframe"
-import ShowMapBtn from "../components/ShowMapBtn"
-import ContactInfo from "../components/contactInfo"
+
+
 
 
 
@@ -10,11 +10,7 @@ function Contact() {
     return (
         <>
             <BasicBreadcrumbs />
-            <div className="contact-container">
-                <ContactInfo />
-                <MainContactForm />
-            </div>
-            <ShowMapBtn />
+            <ContactWrapper />
             <MapsIframe />
         </>
     )

@@ -8,7 +8,7 @@ function ClientTestemonial(props) {
             numberOfStars.push(<span className="gold-star" key={i}>star_rate</span>);
         }
             for (let j = stars; j < 5; j++) {
-                numberOfStars.push(<span key={j}>star_rate</span>);
+                numberOfStars.push(<span className="grey-star" key={j}>star_rate</span>);
             }
     }
 

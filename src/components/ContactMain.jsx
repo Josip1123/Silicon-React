@@ -14,8 +14,7 @@ function ContactMain() {
                 >
                 <p> Do not like phones?</p>
                 <a href="#" className="contact-us-via-chat"
-                >Chat with us</a
-                >
+                >Chat with us</a>
             </div>
         </section>
     )

@@ -110,6 +110,10 @@ button, input[type=submit], input[type=reset] {
   content: "keyboard_arrow_down";
 }
 
+.oppacity-null {
+  opacity: 0;
+}
+
 /* toggle switch with help from W3schools 
 my addition of box shadow and "Dark Mode" text */
 .switch {
@@ -951,6 +955,9 @@ p {
   .client-testemonial span .gold-star {
     color: gold !important;
   }
+  .client-testemonial span .grey-star {
+    color: gray !important;
+  }
   .client-testemonial .client-card {
     position: relative;
     display: flex;
@@ -1350,6 +1357,7 @@ footer .footer-container {
 .dark-mode li {
   color: white !important;
 }
+.dark-mode a,
 .dark-mode p,
 .dark-mode span {
   color: rgba(255, 255, 255, 0.664) !important;
@@ -1414,6 +1422,18 @@ footer .footer-container {
 .dark-mode .form-container .submit-btn:focus-visible {
   outline-color: orange;
 }
+.dark-mode .contact-wrapper {
+  background-color: transparent;
+}
+.dark-mode .contact-wrapper .main-contact-form {
+  background-color: rgba(255, 255, 255, 0.076);
+}
+.dark-mode .contact-wrapper .main-contact-form h2 {
+  color: white !important;
+}
+.dark-mode .contact-wrapper .main-contact-form > * > * > * {
+  color: white;
+}
 
 .animate-and-show-answer .answer {
   display: block;
@@ -1423,6 +1443,42 @@ footer .footer-container {
   transition: all 500ms;
   background-color: #5e60f5;
   color: white;
+}
+
+.contact-wrapper {
+  background-color: #F3F6FF;
+  padding-block: 3rem;
+}
+
+.contact-container {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .contact-container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 900px) {
+  .contact-container {
+    max-width: 900px;
+  }
+}
+@media (min-width: 1200px) {
+  .contact-container {
+    max-width: 1320px;
+  }
+}
+@media (min-width: 900px) {
+  .contact-container {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .breadcrumbs {
@@ -1447,14 +1503,84 @@ footer .footer-container {
   }
 }
 
-.google-maps {
-  border: 3px solid #5e60f5;
-  border-radius: 1rem;
+.map-wrapper {
+  max-width: 450px;
+  margin: 5rem auto 5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 }
 @media (min-width: 768px) {
-  .google-maps {
-    display: block;
+  .map-wrapper {
+    max-width: 768px;
   }
+}
+@media (min-width: 900px) {
+  .map-wrapper {
+    max-width: 900px;
+  }
+}
+@media (min-width: 1200px) {
+  .map-wrapper {
+    max-width: 1320px;
+  }
+}
+@media (min-width: 900px) {
+  .map-wrapper {
+    margin-top: 12rem;
+  }
+}
+@media (min-width: 1200px) {
+  .map-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 6rem;
+    padding-inline: 2rem;
+  }
+}
+.map-wrapper .place-description > * {
+  line-height: 1.8;
+  word-spacing: 0.3rem;
+}
+.map-wrapper .place-description .place {
+  padding-bottom: 1rem;
+}
+.map-wrapper .google-maps {
+  border: 3px solid #5e60f5;
+  border-radius: 1rem;
+  height: 450px;
+  width: 450px;
+}
+@media (min-width: 900px) {
+  .map-wrapper .google-maps {
+    display: block;
+    height: 500px;
+    width: 650px;
+  }
+}
+@media (min-width: 900px) {
+  .map-wrapper .show-map {
+    display: none;
+  }
+}
+
+.contact-info h2 {
+  padding: 0 0 2rem 0;
+}
+.contact-info > * > * {
+  width: 34ch;
+  padding-block: 0.5rem;
+}
+.contact-info a {
+  color: #5e60f5;
+}
+
+.email-us,
+.contact-us {
+  padding-bottom: 1.5rem;
 }
 
 .main-contact-form {
@@ -1463,8 +1589,28 @@ footer .footer-container {
   align-items: flex-start;
   width: 28rem;
   padding: 2rem 3rem;
+  margin-block: 3rem;
   background-color: white;
+  color: white;
   border-radius: 1rem;
+  box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.404);
+}
+@media (min-width: 1200px) {
+  .main-contact-form {
+    margin-bottom: -10rem;
+  }
+}
+.main-contact-form input,
+.main-contact-form textarea {
+  border-radius: 1rem;
+  border: none;
+  background-color: rgb(240, 239, 239);
+  margin-top: 0.5rem;
+  color: black !important;
+  padding: 0.5rem 1rem;
+}
+.main-contact-form textarea {
+  height: 5rem;
 }
 .main-contact-form > * {
   width: 100%;
@@ -1474,6 +1620,8 @@ footer .footer-container {
   display: flex;
   flex-direction: column;
   width: 100%;
+  color: black;
+  border-radius: 1rem;
 }
 .main-contact-form .main-form-header {
   color: black !important;
@@ -1483,10 +1631,5 @@ footer .footer-container {
   margin-top: 2rem;
   display: flex;
   align-items: center;
-}
-
-@media (min-width: 768px) {
-  .show-map {
-    display: none;
-  }
+  color: white;
 }/*# sourceMappingURL=styles.css.map */
