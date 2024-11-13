@@ -163,6 +163,9 @@ p {
         height: 250px;
         border-bottom: 5px solid $main-color;
         pointer-events: all;
+        @media (min-width: $big-screen) {
+            display: none;
+        }
     }
 }
 
@@ -1173,6 +1176,170 @@ footer {
 
 
 
+// contact us
+.contact-wrapper {
+    background-color: $background-secondary;
+    padding-block: 3rem;
+}
+
+.contact-container {
+    @include container-sizes;
+    margin: $center-object;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $medium-screen) {
+        justify-content: space-around;
+        display: flex;
+        flex-direction: row;
+    }
+
+}
+
+.breadcrumbs {
+    @include container-sizes;
+    margin: $center-object;
+    padding-left: 1rem;
+    margin-top: 2rem;
+}
+
+
+//google maps iframe
+.map-wrapper {
+    @include container-sizes;
+    margin: 5rem auto 5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    @media (min-width: $medium-screen) {
+        margin-top: 12rem;
+    }
+
+    @media (min-width: $big-screen) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 6rem;
+        padding-inline: 2rem;
+    }
+
+    .place-description {
+        &>* {
+            line-height: 1.8;
+            word-spacing: .3rem;
+        }
+
+        .place {
+            padding-bottom: 1rem;
+        }
+    }
+
+    .google-maps {
+        border: 3px solid $main-color;
+        border-radius: $border-radius;
+        height: 450px;
+        width: 450px;
+
+        @media (min-width: $medium-screen) {
+            display: block;
+            height: 500px;
+            width: 650px;
+        }
+
+    }
+
+    .show-map {
+        @media (min-width: $medium-screen) {
+            display: none;
+        }
+    }
+}
+
+.contact-info {
+    h2 {
+        padding: 0 0 2rem 0;
+        font-size: $h2-fontsize;
+    }
+
+    &>*>* {
+        width: 34ch;
+        padding-block: .5rem;
+    }
+
+    a {
+        color: $main-color;
+    }
+}
+
+.email-us,
+.contact-us {
+    padding-bottom: 1.5rem;
+}
+
+.main-contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 28rem;
+    padding: 2rem 3rem;
+    margin-block: 3rem;
+    background-color: white;
+    color: white;
+    border-radius: $border-radius;
+    box-shadow: $shadow-main;
+
+    @media (min-width: $big-screen) {
+        margin-bottom: -10rem;
+    }
+
+
+    input,
+    textarea {
+        border-radius: $border-radius;
+        border: none;
+        background-color: rgb(240, 239, 239);
+        margin-top: .5rem;
+        color: black !important;
+        padding: .5rem 1rem;
+    }
+
+    textarea {
+        height: 5rem;
+    }
+
+    &>* {
+        width: 100%;
+    }
+
+    &>*>* {
+        padding-block: .8rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        color: black;
+        border-radius: $border-radius;
+    }
+
+    .main-form-header {
+        color: black !important;
+        padding-bottom: 2rem;
+    }
+
+    button {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+
+}
+//contuct us ends
+
 // darkmode
 
 .dark-mode {
@@ -1291,9 +1458,14 @@ footer {
             }
         }
     }
+
+    .contact-us-more-info{
+        color: $main-color !important;
+    }
 }
 
 //darkmode end
+
 
 //animation
 
@@ -1313,166 +1485,3 @@ footer {
 }
 
 //animatio end
-
-
-// contact us
-.contact-wrapper {
-    background-color: $background-secondary;
-    padding-block: 3rem;
-}
-
-.contact-container {
-    @include container-sizes;
-    margin: $center-object;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    @media (min-width: $medium-screen) {
-        justify-content: space-around;
-        display: flex;
-        flex-direction: row;
-    }
-
-}
-
-.breadcrumbs {
-    @include container-sizes;
-    margin: $center-object;
-    padding-left: 1rem;
-    margin-top: 2rem;
-}
-
-
-//google maps iframe
-.map-wrapper {
-    @include container-sizes;
-    margin: 5rem auto 5rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-
-    @media (min-width: $medium-screen) {
-        margin-top: 12rem;
-    }
-
-    @media (min-width: $big-screen) {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: flex-start;
-        justify-content: flex-end;
-        gap: 6rem;
-        padding-inline: 2rem;
-    }
-
-    .place-description {
-        &>* {
-            line-height: 1.8;
-            word-spacing: .3rem;
-        }
-
-        .place {
-            padding-bottom: 1rem;
-        }
-    }
-
-    .google-maps {
-        border: 3px solid $main-color;
-        border-radius: $border-radius;
-        height: 450px;
-        width: 450px;
-
-        @media (min-width: $medium-screen) {
-            display: block;
-            height: 500px;
-            width: 650px;
-        }
-
-    }
-
-    .show-map {
-        @media (min-width: $medium-screen) {
-            display: none;
-        }
-    }
-}
-
-.contact-info {
-    h2 {
-        padding: 0 0 2rem 0;
-    }
-
-    &>*>* {
-        width: 34ch;
-        padding-block: .5rem;
-    }
-
-    a {
-        color: $main-color;
-    }
-}
-
-.email-us,
-.contact-us {
-    padding-bottom: 1.5rem;
-}
-
-.main-contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 28rem;
-    padding: 2rem 3rem;
-    margin-block: 3rem;
-    background-color: white;
-    color: white;
-    border-radius: $border-radius;
-    box-shadow: $shadow-main;
-
-    @media (min-width: $big-screen) {
-        margin-bottom: -10rem;
-    }
-
-
-    input,
-    textarea {
-        border-radius: $border-radius;
-        border: none;
-        background-color: rgb(240, 239, 239);
-        margin-top: .5rem;
-        color: black !important;
-        padding: .5rem 1rem;
-    }
-
-    textarea {
-        height: 5rem;
-    }
-
-    &>* {
-        width: 100%;
-    }
-
-    &>*>* {
-        padding-block: .8rem;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        color: black;
-        border-radius: $border-radius;
-    }
-
-    .main-form-header {
-        color: black !important;
-        padding-bottom: 2rem;
-    }
-
-    button {
-        margin-top: 2rem;
-        display: flex;
-        align-items: center;
-        color: white;
-    }
-
-}

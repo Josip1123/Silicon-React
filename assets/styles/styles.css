@@ -351,6 +351,11 @@ p {
   border-bottom: 5px solid #5e60f5;
   pointer-events: all;
 }
+@media (min-width: 1200px) {
+  .header-container .menu-shown {
+    display: none;
+  }
+}
 
 .hero-wrapper-bg {
   background: rgb(99, 102, 241);
@@ -1373,103 +1378,6 @@ footer .footer-container {
   }
 }
 
-.dark-mode {
-  background-color: black;
-}
-.dark-mode h1,
-.dark-mode h2,
-.dark-mode h3,
-.dark-mode li {
-  color: white !important;
-}
-.dark-mode a,
-.dark-mode p,
-.dark-mode span {
-  color: rgba(255, 255, 255, 0.664) !important;
-}
-.dark-mode .main-navigation {
-  color: white;
-}
-.dark-mode .hero-container .hero-content .app-store-container .app-store,
-.dark-mode .hero-container .hero-content .app-store-container .google-play {
-  background-color: #5e60f5;
-}
-.dark-mode .hero-container .hero-content .discover-more {
-  color: white;
-}
-.dark-mode .hero-container .hero-content .discover-more .down-arrow {
-  background-color: rgba(88, 92, 123, 0.2705882353);
-}
-.dark-mode .down-arrow {
-  background-color: rgba(88, 92, 123, 0.2705882353);
-}
-.dark-mode .feature-icon {
-  background-color: rgba(88, 92, 123, 0.2705882353);
-}
-.dark-mode .payment-icon-1,
-.dark-mode .payment-icon-2 {
-  background-color: rgba(88, 92, 123, 0.2705882353);
-}
-.dark-mode .app-showcase-wrapper {
-  background-color: rgba(255, 255, 255, 0.076);
-}
-.dark-mode .testemonial-wrapper {
-  background-color: rgba(255, 255, 255, 0.076);
-}
-.dark-mode .client-card {
-  background-color: transparent;
-  box-shadow: none;
-}
-.dark-mode .faq-card {
-  background-color: rgba(255, 255, 255, 0.076);
-}
-@media (min-width: 768px) {
-  .dark-mode .faq-card {
-    border: none;
-  }
-}
-.dark-mode .question {
-  font-weight: 700;
-}
-.dark-mode .phone-icon {
-  color: #5e60f5 !important;
-}
-.dark-mode .chat-icon {
-  color: green !important;
-}
-.dark-mode .contact-phone,
-.dark-mode .contact-chat {
-  background-color: rgba(255, 255, 255, 0.076);
-}
-.dark-mode .form-container {
-  background-color: rgba(255, 255, 255, 0.076);
-}
-.dark-mode .form-container .submit-btn:focus-visible {
-  outline-color: orange;
-}
-.dark-mode .contact-wrapper {
-  background-color: transparent;
-}
-.dark-mode .contact-wrapper .main-contact-form {
-  background-color: rgba(255, 255, 255, 0.076);
-}
-.dark-mode .contact-wrapper .main-contact-form h2 {
-  color: white !important;
-}
-.dark-mode .contact-wrapper .main-contact-form > * > * > * {
-  color: white;
-}
-
-.animate-and-show-answer .answer {
-  display: block;
-}
-.animate-and-show-answer .animated-btn {
-  transform: rotate(180deg);
-  transition: all 500ms;
-  background-color: #5e60f5;
-  color: white;
-}
-
 .contact-wrapper {
   background-color: #F3F6FF;
   padding-block: 3rem;
@@ -1594,6 +1502,7 @@ footer .footer-container {
 
 .contact-info h2 {
   padding: 0 0 2rem 0;
+  font-size: 32px;
 }
 .contact-info > * > * {
   width: 34ch;
@@ -1656,5 +1565,105 @@ footer .footer-container {
   margin-top: 2rem;
   display: flex;
   align-items: center;
+  color: white;
+}
+
+.dark-mode {
+  background-color: black;
+}
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode li {
+  color: white !important;
+}
+.dark-mode a,
+.dark-mode p,
+.dark-mode span {
+  color: rgba(255, 255, 255, 0.664) !important;
+}
+.dark-mode .main-navigation {
+  color: white;
+}
+.dark-mode .hero-container .hero-content .app-store-container .app-store,
+.dark-mode .hero-container .hero-content .app-store-container .google-play {
+  background-color: #5e60f5;
+}
+.dark-mode .hero-container .hero-content .discover-more {
+  color: white;
+}
+.dark-mode .hero-container .hero-content .discover-more .down-arrow {
+  background-color: rgba(88, 92, 123, 0.2705882353);
+}
+.dark-mode .down-arrow {
+  background-color: rgba(88, 92, 123, 0.2705882353);
+}
+.dark-mode .feature-icon {
+  background-color: rgba(88, 92, 123, 0.2705882353);
+}
+.dark-mode .payment-icon-1,
+.dark-mode .payment-icon-2 {
+  background-color: rgba(88, 92, 123, 0.2705882353);
+}
+.dark-mode .app-showcase-wrapper {
+  background-color: rgba(255, 255, 255, 0.076);
+}
+.dark-mode .testemonial-wrapper {
+  background-color: rgba(255, 255, 255, 0.076);
+}
+.dark-mode .client-card {
+  background-color: transparent;
+  box-shadow: none;
+}
+.dark-mode .faq-card {
+  background-color: rgba(255, 255, 255, 0.076);
+}
+@media (min-width: 768px) {
+  .dark-mode .faq-card {
+    border: none;
+  }
+}
+.dark-mode .question {
+  font-weight: 700;
+}
+.dark-mode .phone-icon {
+  color: #5e60f5 !important;
+}
+.dark-mode .chat-icon {
+  color: green !important;
+}
+.dark-mode .contact-phone,
+.dark-mode .contact-chat {
+  background-color: rgba(255, 255, 255, 0.076);
+}
+.dark-mode .form-container {
+  background-color: rgba(255, 255, 255, 0.076);
+}
+.dark-mode .form-container .submit-btn:focus-visible {
+  outline-color: orange;
+}
+.dark-mode .contact-wrapper {
+  background-color: transparent;
+}
+.dark-mode .contact-wrapper .main-contact-form {
+  background-color: rgba(255, 255, 255, 0.076);
+}
+.dark-mode .contact-wrapper .main-contact-form h2 {
+  color: white !important;
+}
+.dark-mode .contact-wrapper .main-contact-form > * > * > * {
+  color: white;
+}
+.dark-mode .contact-us-more-info {
+  color: #5e60f5 !important;
+}
+
+.animate-and-show-answer .answer {
+  display: block;
+}
+.animate-and-show-answer .animated-btn {
+  transform: rotate(180deg);
+  transition: all 500ms;
+  background-color: #5e60f5;
   color: white;
 }/*# sourceMappingURL=styles.css.map */
