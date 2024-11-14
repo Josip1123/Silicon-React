@@ -25,7 +25,7 @@ function Header() {
             <div className="header-container">
                 <NavigationAndLogo />
                 <DarkmodeToggle />
-                <MenuBtn onClick={toggleMobileMenu}  />
+                <MenuBtn onClick={toggleMobileMenu} isMenuVisible={isMenuVisible} />
                 <MobileMenu isMenuVisible={isMenuVisible} reset={reset} />
             </div>
         </header>

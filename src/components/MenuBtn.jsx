@@ -1,5 +1,5 @@
 
-function MenuBtn({ onClick }) {
+function MenuBtn({ onClick, isMenuVisible }) {
 
     return (
         <>
@@ -9,7 +9,7 @@ function MenuBtn({ onClick }) {
             </a>
 
             <a className="mobile-menu" onClick={onClick} aria-label="mobile menu">
-                <span className="material-symbols-outlined"> Menu </span>
+                <span className="material-symbols-outlined"> {isMenuVisible ? "close" : "menu"} </span>
             </a>
         
         </>

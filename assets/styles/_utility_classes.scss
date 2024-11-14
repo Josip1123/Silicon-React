@@ -6,10 +6,11 @@
     color: white;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
-.shown{
+
+.shown {
     display: block;
 }
 
@@ -35,6 +36,16 @@
 }
 
 
-.oppacity-null{
+.oppacity-null {
     opacity: 0;
+}
+
+
+.error-text {
+    color: red;
+}
+
+.disabled {
+    color: grey!important;
+    opacity: 50%;
 }

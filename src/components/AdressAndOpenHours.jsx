@@ -18,12 +18,12 @@ function AdressAndOpenHours() {
                 <span className="material-symbols-outlined">
                     schedule
                 </span>
-                <b> Mon-Fri</b> 9.00 am - 22.00 pm
+                <b> Mon-Fri:</b> 9.00 am - 22.00 pm
                 <br />
                 <span className="material-symbols-outlined oppacity-null">
                     schedule
                 </span>
-                <b> Sat-Sun</b> Closed
+                <b> Sat-Sun:</b> Closed
             </p>
         </div>
     )

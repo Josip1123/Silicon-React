@@ -27,7 +27,7 @@ body {
 
 a:focus-visible,
 button:focus-visible,
-textarea:focus-visible{
+textarea:focus-visible {
     @include outline-focus;
 
     &:active {
@@ -140,7 +140,7 @@ p {
         }
     }
 
-    .menu-collapsed{
+    .menu-collapsed {
         width: 100%;
         list-style: none;
         display: flex;
@@ -159,10 +159,11 @@ p {
         transition: height 250ms ease;
     }
 
-    .menu-shown{
+    .menu-shown {
         height: 250px;
         border-bottom: 5px solid $main-color;
         pointer-events: all;
+
         @media (min-width: $big-screen) {
             display: none;
         }
@@ -1100,10 +1101,18 @@ p {
             }
         }
 
+        .success-submit {
+            color: green;
+            font-size: $XL-text;
+            text-align: center;
+            font-weight: $medium;
+        }
+
         form {
             .form-content {
                 display: flex;
                 justify-content: center;
+                width: 100%;
 
 
                 .email-input {
@@ -1142,6 +1151,14 @@ p {
                 font-size: $M-text;
                 font-weight: $bold;
                 padding: 1rem;
+            }
+
+
+
+            .error {
+                max-width: fit-content;
+                margin: auto;
+                display: block;
             }
         }
     }
@@ -1299,7 +1316,7 @@ footer {
 
 
     input,
-    textarea {
+    select {
         border-radius: $border-radius;
         border: none;
         background-color: rgb(240, 239, 239);
@@ -1307,6 +1324,18 @@ footer {
         color: black !important;
         padding: .5rem 1rem;
     }
+
+    select {
+        background-color:rgb(240, 239, 239);
+        background-image: url(".././img/arrow_drop_down_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg");
+        background-repeat: no-repeat;
+        background-position: 97%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        color: #939598;
+    }
+
 
     textarea {
         height: 5rem;
@@ -1338,6 +1367,7 @@ footer {
     }
 
 }
+
 //contuct us ends
 
 // darkmode
@@ -1354,7 +1384,7 @@ footer {
 
     a,
     p,
-    span {
+    span:not(.error-text) {
         color: $darkmode-text-white !important;
     }
 
@@ -1459,7 +1489,7 @@ footer {
         }
     }
 
-    .contact-us-more-info{
+    .contact-us-more-info {
         color: $main-color !important;
     }
 }
@@ -1484,4 +1514,4 @@ footer {
     }
 }
 
-//animatio end
+//animation end

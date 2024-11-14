@@ -114,6 +114,15 @@ button, input[type=submit], input[type=reset] {
   opacity: 0;
 }
 
+.error-text {
+  color: red;
+}
+
+.disabled {
+  color: grey !important;
+  opacity: 50%;
+}
+
 /* toggle switch with help from W3schools 
 my addition of box shadow and "Dark Mode" text */
 .switch {
@@ -1305,9 +1314,16 @@ p {
     text-align: start;
   }
 }
+.contact-form-wrapper .form-container .success-submit {
+  color: green;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 500;
+}
 .contact-form-wrapper .form-container form .form-content {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 .contact-form-wrapper .form-container form .form-content .email-input {
   position: relative;
@@ -1340,6 +1356,12 @@ p {
   font-size: 16px;
   font-weight: 700;
   padding: 1rem;
+}
+.contact-form-wrapper .form-container form .error {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: auto;
+  display: block;
 }
 
 footer {
@@ -1535,13 +1557,23 @@ footer .footer-container {
   }
 }
 .main-contact-form input,
-.main-contact-form textarea {
+.main-contact-form select {
   border-radius: 1rem;
   border: none;
   background-color: rgb(240, 239, 239);
   margin-top: 0.5rem;
   color: black !important;
   padding: 0.5rem 1rem;
+}
+.main-contact-form select {
+  background-color: rgb(240, 239, 239);
+  background-image: url(".././img/arrow_drop_down_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg");
+  background-repeat: no-repeat;
+  background-position: 97%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #939598;
 }
 .main-contact-form textarea {
   height: 5rem;
@@ -1579,7 +1611,7 @@ footer .footer-container {
 }
 .dark-mode a,
 .dark-mode p,
-.dark-mode span {
+.dark-mode span:not(.error-text) {
   color: rgba(255, 255, 255, 0.664) !important;
 }
 .dark-mode .main-navigation {
