@@ -1190,6 +1190,7 @@ footer {
 .contact-wrapper {
     background-color: $background-secondary;
     padding-block: 3rem;
+    margin: auto;
 }
 
 .contact-container {
@@ -1201,9 +1202,14 @@ footer {
     align-items: center;
 
     @media (min-width: $medium-screen) {
-        justify-content: space-around;
+        justify-content: space-between;
         display: flex;
         flex-direction: row;
+    }
+
+    @media (min-width: $big-screen) {
+        justify-content: space-around;
+
     }
 
 }
@@ -1226,7 +1232,7 @@ footer {
     gap: 3rem;
 
     @media (min-width: $medium-screen) {
-        margin-top: 12rem;
+        margin-top: 5rem;
     }
 
     @media (min-width: $big-screen) {
@@ -1236,10 +1242,13 @@ footer {
         justify-content: flex-end;
         gap: 6rem;
         padding-inline: 2rem;
+        margin-top: 12rem;
     }
+
     span {
         vertical-align: text-top;
     }
+
     .place-description {
         &>* {
             line-height: 1.8;
@@ -1279,8 +1288,12 @@ footer {
     }
 
     &>*>* {
-        width: 34ch;
+        width: 25ch;
         padding-block: .5rem;
+
+        @media (min-width: $medium-screen) {
+            width: 35ch;
+        }
     }
 
     a {
@@ -1297,19 +1310,23 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 28rem;
-    padding: 2rem 3rem;
+    padding: 2rem 2rem;
     margin-block: 3rem;
     background-color: white;
     color: white;
     border-radius: $border-radius;
     box-shadow: $shadow-main;
 
-    @media (min-width: $big-screen) {
-        margin-bottom: -10rem;
+    @media (min-width: $medium-screen) {
+        flex: 0 0 50%;
     }
 
-    .reset-btn{
+    @media (min-width: $big-screen) {
+        margin-bottom: -10rem;
+        flex: 0 0 35%;
+    }
+
+    .reset-btn {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1326,10 +1343,12 @@ footer {
         margin-top: .5rem;
         color: black !important;
         padding: .5rem 1rem;
+        width: 100%;
+
     }
 
     select {
-        background-color:rgb(240, 239, 239);
+        background-color: rgb(240, 239, 239);
         background-image: url(".././img/arrow_drop_down_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg");
         background-repeat: no-repeat;
         background-position: 97%;
@@ -1339,10 +1358,6 @@ footer {
         color: #939598;
     }
 
-
-    textarea {
-        height: 5rem;
-    }
 
     &>* {
         width: 100%;
@@ -1360,6 +1375,7 @@ footer {
     .main-form-header {
         color: black !important;
         padding-bottom: 2rem;
+        text-align: center;
     }
 
     button {
@@ -1381,18 +1397,17 @@ footer {
     h1,
     h2,
     h3,
-    li {
+    li
+    {
         color: white !important;
     }
 
-    a,
-    p,
-    span:not(.error-text) {
-        color: $darkmode-text-white !important;
-    }
-
-    .main-navigation {
-        color: white;
+    .header-container {
+        .main-navigation,
+        .darkmode-text,
+        .mobile-menu {
+            color: white;
+        }
     }
 
     .hero-container {
@@ -1449,10 +1464,16 @@ footer {
         @media (min-width: $ipad-mini) {
             border: none;
         }
+        .question {
+            color: white;
+            font-weight: $bold;
+        }
     }
 
-    .question {
-        font-weight: $bold;
+    .q-and-btn-container {
+        span {
+            color: white;
+        }
     }
 
     .phone-icon {

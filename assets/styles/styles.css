@@ -1404,6 +1404,7 @@ footer .footer-container {
 .contact-wrapper {
   background-color: #F3F6FF;
   padding-block: 3rem;
+  margin: auto;
 }
 
 .contact-container {
@@ -1431,9 +1432,14 @@ footer .footer-container {
 }
 @media (min-width: 900px) {
   .contact-container {
-    justify-content: space-around;
+    justify-content: space-between;
     display: flex;
     flex-direction: row;
+  }
+}
+@media (min-width: 1200px) {
+  .contact-container {
+    justify-content: space-around;
   }
 }
 
@@ -1484,7 +1490,7 @@ footer .footer-container {
 }
 @media (min-width: 900px) {
   .map-wrapper {
-    margin-top: 12rem;
+    margin-top: 5rem;
   }
 }
 @media (min-width: 1200px) {
@@ -1495,6 +1501,7 @@ footer .footer-container {
     justify-content: flex-end;
     gap: 6rem;
     padding-inline: 2rem;
+    margin-top: 12rem;
   }
 }
 .map-wrapper span {
@@ -1531,8 +1538,13 @@ footer .footer-container {
   font-size: 32px;
 }
 .contact-info > * > * {
-  width: 34ch;
+  width: 25ch;
   padding-block: 0.5rem;
+}
+@media (min-width: 900px) {
+  .contact-info > * > * {
+    width: 35ch;
+  }
 }
 .contact-info a {
   color: #5e60f5;
@@ -1547,17 +1559,22 @@ footer .footer-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 28rem;
-  padding: 2rem 3rem;
+  padding: 2rem 2rem;
   margin-block: 3rem;
   background-color: white;
   color: white;
   border-radius: 1rem;
   box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.404);
 }
+@media (min-width: 900px) {
+  .main-contact-form {
+    flex: 0 0 50%;
+  }
+}
 @media (min-width: 1200px) {
   .main-contact-form {
     margin-bottom: -10rem;
+    flex: 0 0 35%;
   }
 }
 .main-contact-form .reset-btn {
@@ -1576,6 +1593,7 @@ footer .footer-container {
   margin-top: 0.5rem;
   color: black !important;
   padding: 0.5rem 1rem;
+  width: 100%;
 }
 .main-contact-form select {
   background-color: rgb(240, 239, 239);
@@ -1586,9 +1604,6 @@ footer .footer-container {
   -moz-appearance: none;
   appearance: none;
   color: #939598;
-}
-.main-contact-form textarea {
-  height: 5rem;
 }
 .main-contact-form > * {
   width: 100%;
@@ -1604,6 +1619,7 @@ footer .footer-container {
 .main-contact-form .main-form-header {
   color: black !important;
   padding-bottom: 2rem;
+  text-align: center;
 }
 .main-contact-form button {
   margin-top: 2rem;
@@ -1621,12 +1637,9 @@ footer .footer-container {
 .dark-mode li {
   color: white !important;
 }
-.dark-mode a,
-.dark-mode p,
-.dark-mode span:not(.error-text) {
-  color: rgba(255, 255, 255, 0.664) !important;
-}
-.dark-mode .main-navigation {
+.dark-mode .header-container .main-navigation,
+.dark-mode .header-container .darkmode-text,
+.dark-mode .header-container .mobile-menu {
   color: white;
 }
 .dark-mode .hero-container .hero-content .app-store-container .app-store,
@@ -1667,8 +1680,12 @@ footer .footer-container {
     border: none;
   }
 }
-.dark-mode .question {
+.dark-mode .faq-card .question {
+  color: white;
   font-weight: 700;
+}
+.dark-mode .q-and-btn-container span {
+  color: white;
 }
 .dark-mode .phone-icon {
   color: #5e60f5 !important;
