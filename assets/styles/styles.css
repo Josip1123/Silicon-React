@@ -1497,6 +1497,9 @@ footer .footer-container {
     padding-inline: 2rem;
   }
 }
+.map-wrapper span {
+  vertical-align: text-top;
+}
 .map-wrapper .place-description > * {
   line-height: 1.8;
   word-spacing: 0.3rem;

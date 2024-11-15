@@ -1237,7 +1237,9 @@ footer {
         gap: 6rem;
         padding-inline: 2rem;
     }
-
+    span {
+        vertical-align: text-top;
+    }
     .place-description {
         &>* {
             line-height: 1.8;
