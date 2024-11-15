@@ -1,7 +1,15 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import SuccesfullSubmit from "./SuccesfullSubmit"
+import { WarningContext } from "../App"
 
 function MainContactForm() {
+
+    const [isWarningDismissed, setIsWarningDismissed, message] = useContext(WarningContext)
+
+    function handleDismiss(e) {
+        e.preventDefault()
+        setIsWarningDismissed(true)
+    }
 
     const [formData, setFormData] = useState({
         fullName: "",
@@ -20,7 +28,7 @@ function MainContactForm() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        
+
         if (!validateBeforeSub()) {
             return
         }
@@ -80,7 +88,7 @@ function MainContactForm() {
         }
         setErrors(prevErrors => ({ ...prevErrors, [name]: error }))
     }
-    
+
     function reset() {
         setIsSubmited(false)
     }
@@ -88,14 +96,28 @@ function MainContactForm() {
     return (
         <div className='main-contact-form' noValidate>
             {
-                isSubmited ?    <>
-                                    <SuccesfullSubmit text={"Thanks for contacting us, we will get back to you shortly!"} />
-                                    <button className="main-btn reset-btn" onClick={reset}>Go back</button>
-                                </>
+                isSubmited ? <>
+                    <SuccesfullSubmit text={"Thanks for contacting us, we will get back to you shortly!"} >
+                    </SuccesfullSubmit>
+                    <button className="main-btn reset-btn" onClick={reset}>Go back</button>
+                </>
                     :
                     <>
                         <h2 className='main-form-header'>Get Online Consultation</h2>
                         <form onSubmit={handleSubmit}>
+
+                            <div
+                            className={isWarningDismissed ? `hidden` : `form-security-warning`}>
+                                <p> 
+                                    {message}
+                                </p>
+                                <button className="main-btn" onClick={handleDismiss}>
+                                    <span className="material-symbols-outlined">
+                                        close
+                                    </span>
+                                </button>
+
+                            </div>
                             <div>
                                 <label htmlFor="fullName">Full Name</label>
                                 <input type="text" id="fullName" name="fullName" value={formData.fullName} onChange={handleChange} placeholder='Type in your name' />

@@ -3,6 +3,7 @@ import DarkmodeToggle from "./DarkmodeToggle"
 import MenuBtn from "./MenuBtn"
 import { useState } from "react"
 import MobileMenu from "./MobileMenu"
+import WarningMessage from "./WarningMessage"
 
 function Header() {
 
@@ -28,6 +29,7 @@ function Header() {
                 <MenuBtn onClick={toggleMobileMenu} isMenuVisible={isMenuVisible} />
                 <MobileMenu isMenuVisible={isMenuVisible} reset={reset} />
             </div>
+            <WarningMessage />
         </header>
     )
 }
