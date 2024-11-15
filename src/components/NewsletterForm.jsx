@@ -81,7 +81,7 @@ function NewsletterForm() {
                     </div>
                     <h2>Subscribe to our newsletter</h2>
                 </div>
-                {isSubmited ? <SuccesfullSubmit text={"Thanks for subscribing to out newsletter"} /> :
+                {isSubmited ? <SuccesfullSubmit text={"Thanks for subscribing to our newsletter"} /> :
 
                     <form action="" name="newsletter" id="email-subscription" onSubmit={handleSubmit} noValidate>
                         <div className="form-content">

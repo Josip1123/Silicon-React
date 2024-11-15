@@ -123,6 +123,13 @@ button, input[type=submit], input[type=reset] {
   opacity: 50%;
 }
 
+.success-submit {
+  color: green;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
 /* toggle switch with help from W3schools 
 my addition of box shadow and "Dark Mode" text */
 .switch {
@@ -1314,12 +1321,6 @@ p {
     text-align: start;
   }
 }
-.contact-form-wrapper .form-container .success-submit {
-  color: green;
-  font-size: 20px;
-  text-align: center;
-  font-weight: 500;
-}
 .contact-form-wrapper .form-container form .form-content {
   display: flex;
   justify-content: center;
@@ -1555,6 +1556,14 @@ footer .footer-container {
   .main-contact-form {
     margin-bottom: -10rem;
   }
+}
+.main-contact-form .reset-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  margin: 2rem auto 0 auto;
 }
 .main-contact-form input,
 .main-contact-form select {
