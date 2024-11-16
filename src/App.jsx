@@ -19,7 +19,7 @@ function App() {
   return (
 
     <WarningContext.Provider value={[isWarningDismissed, setIsWarningDismissed, message]}>
-      <BrowserRouter>
+      <BrowserRouter basename="/Silicon-React">
         <Header />
           <main>
             <Routes>
