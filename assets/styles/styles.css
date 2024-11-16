@@ -115,7 +115,7 @@ button, input[type=submit], input[type=reset] {
 }
 
 .error-text {
-  color: red;
+  color: red !important;
 }
 
 .disabled {
@@ -1674,7 +1674,8 @@ footer .footer-container {
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h3,
-.dark-mode li {
+.dark-mode li,
+.dark-mode p {
   color: white !important;
 }
 .dark-mode .header-container .main-navigation,
