@@ -19,7 +19,7 @@ function App() {
   return (
 
     <WarningContext.Provider value={[isWarningDismissed, setIsWarningDismissed, message]}>
-      <HashRouter basename="/Silicon-React">
+      <HashRouter >
         <Header />
           <main>
             <Routes>
