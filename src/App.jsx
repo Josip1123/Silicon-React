@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { HashRouter, Routes, Route } from "react-router-dom"
 import { createContext, useState } from "react";
 import Footer from './components/Footer'
 import Header from "./components/Header"
@@ -19,7 +19,7 @@ function App() {
   return (
 
     <WarningContext.Provider value={[isWarningDismissed, setIsWarningDismissed, message]}>
-      <BrowserRouter basename="/Silicon-React">
+      <HashRouter basename="/Silicon-React">
         <Header />
           <main>
             <Routes>
@@ -28,7 +28,7 @@ function App() {
             </Routes>
           </main>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </WarningContext.Provider>
 
   )
